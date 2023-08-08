@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    
+    <input class="js-input" onkeyup="inputPlaceHolder()">
+    <p class="js-text"></p>
+    <script>
+      
+      function inputPlaceHolder(){
+        const inputElement= document.querySelector('.js-input');
+        document.querySelector('.js-text').innerHTML= `${inputElement.value}`;
+      }
+      
+      
+    </script>
+  </body>
+</html>

@@ -3,8 +3,29 @@
   <head></head>
   <body>
     <button class ="js-9a-button">9a</button>
+    <button class="js-9b-button">9b</button><br><br>
+    <button onclick="choice('heads')" >heads</button>
+    <button onclick="choice('tails')" >tails</button>
+    <p class="js-choice"></p>
+    <input class="js-input-name" placeholder="Name" onkeydown="nameOnKeyDown(event)">
+    <button class ="js-submit-button" onclick="nameInputPlaceHolder()">submitt</button>
+    <p class="js-name"></p>
     <script>
       console.log(document.querySelector('.js-9a-button').innerText);
+      document.querySelector('.js-9b-button').innerHTML = '9b done';
+      function choice(choice){
+        document.querySelector('.js-choice').innerHTML =`You chose: ${choice}`;
+      }
+      function nameInputPlaceHolder(){
+        const inputElement= document.querySelector('.js-input-name');
+        document.querySelector('.js-name').innerHTML= `Your name is: ${inputElement.value}`;
+      }
+      function nameOnKeyDown(event){
+        if(event.key === 'Enter'){
+          nameInputPlaceHolder();
+        }
+      }
+      
     </script>
   </body>
 </html>
