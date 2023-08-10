@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>12a &12b</title>
+  </head>
+  <body>
+    <script>
+      const add= function(){
+        console.log(2+3);
+      }
+
+      function runTwice(param){
+        param();
+        param();
+      }
+      runTwice(function(){console.log('12b');});
+      runTwice(add);
+    </script>
+  </body>
+</html>

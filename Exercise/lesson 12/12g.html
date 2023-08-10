@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title class ='js-new-messages'>app</title>
+  </head>
+  <body>
+    <button onclick="addMessages()">add</button>
+    <button onclick="removeMessagess()">remove</button>
+    <script>
+      let messages =2;
+      let isblinking =true;
+      let inteveral;
+      inteveral = setInterval(function(){
+        if(document.title === 'app' ){
+          document.title =`(${messages}) New messages`;
+        }else{
+          document.title ='app';
+        }
+      },1000);
+      function addMessages(){
+        messages++;
+        if(!isblinking){
+          inteveral = setInterval(function(){
+            if(document.title === 'app' ){
+              document.title =`(${messages}) New messages`;
+            }else{
+              document.title ='app';
+            }
+            isblinking=true;
+          },1000);
+        }
+      }
+      function removeMessagess(){
+        if(messages>0){
+          messages--;
+          if(messages == 0){
+            clearInterval(inteveral);
+            document.title ='app'
+            isblinking=false;
+          }
+        }
+        
+      }
+    </script>
+  </body>
+</html>

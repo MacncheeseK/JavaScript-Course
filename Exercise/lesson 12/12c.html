@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>12c,12b,12e</title>
+  </head>
+  <body>
+    <button onclick="start()" class="js-start-button">Start</button> <br>
+    <button onclick="addToCart()">Add to Cart</button>
+    <p class="js-added"></p>
+    <script>
+      function start(){
+        setTimeout(function(){
+          document.querySelector('.js-start-button').innerHTML ='Finished!';
+        },1000)
+        document.querySelector('.js-start-button').innerHTML='Loading...';
+      }
+      let timedOut;
+      function addToCart(){
+        document.querySelector('.js-added').innerHTML='Added';
+        clearTimeout(timedOut);
+        timedOut= setTimeout(function(){
+            document.querySelector('.js-added').innerHTML ='';
+          },2000);
+      }
+    </script>
+  </body>
+</html>
