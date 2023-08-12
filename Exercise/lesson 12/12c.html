@@ -4,21 +4,27 @@
     <title>12c,12b,12e</title>
   </head>
   <body>
-    <button onclick="start()" class="js-start-button">Start</button> <br>
-    <button onclick="addToCart()">Add to Cart</button>
+    <button class="js-start-button">Start</button> <br>
+    <button class="js-add-to-cart-button">Add to Cart</button>
     <p class="js-added"></p>
     <script>
+
+      document.querySelector('.js-start-button').addEventListener('click',()=>start());
+
       function start(){
-        setTimeout(function(){
+        setTimeout(()=>{
           document.querySelector('.js-start-button').innerHTML ='Finished!';
         },1000)
         document.querySelector('.js-start-button').innerHTML='Loading...';
       }
+
       let timedOut;
+      document.querySelector('.js-add-to-cart-button').addEventListener('click',()=>addToCart());
+
       function addToCart(){
         document.querySelector('.js-added').innerHTML='Added';
         clearTimeout(timedOut);
-        timedOut= setTimeout(function(){
+        timedOut= setTimeout(() =>{
             document.querySelector('.js-added').innerHTML ='';
           },2000);
       }

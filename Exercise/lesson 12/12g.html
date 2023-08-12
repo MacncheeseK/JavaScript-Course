@@ -4,23 +4,24 @@
     <title class ='js-new-messages'>app</title>
   </head>
   <body>
-    <button onclick="addMessages()">add</button>
-    <button onclick="removeMessagess()">remove</button>
+    <button class="js-add-button">add</button>
+    <button class="js-remove-button">remove</button>
     <script>
       let messages =2;
       let isblinking =true;
       let inteveral;
-      inteveral = setInterval(function(){
+      inteveral = setInterval(()=>{
         if(document.title === 'app' ){
           document.title =`(${messages}) New messages`;
         }else{
           document.title ='app';
         }
       },1000);
+      document.querySelector('.js-add-button').addEventListener('click',() => addMessages());
       function addMessages(){
         messages++;
         if(!isblinking){
-          inteveral = setInterval(function(){
+          inteveral = setInterval(()=>{
             if(document.title === 'app' ){
               document.title =`(${messages}) New messages`;
             }else{
@@ -30,6 +31,7 @@
           },1000);
         }
       }
+      document.querySelector('.js-remove-button').addEventListener('click', ()=>removeMessagess());
       function removeMessagess(){
         if(messages>0){
           messages--;
